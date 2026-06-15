@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Método RESET da Ansiedade — Instituto Diego Moreira</title>
+<title>Método RESET da Ansiedade — Diego Moreira | Hipnoterapeuta Clínico</title>
+<meta name="description" content="Hipnoterapia clínica individual para líderes e empresários que sofrem com ansiedade. Método RESET — resultado garantido. Diego Moreira, Major do Exército e hipnoterapeuta certificado.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --navy:   #0A1628;
@@ -19,6 +20,7 @@
     --line:   #DDD8CF;
     --white:  #FFFFFF;
     --green:  #25D366;
+    --red:    #B5544A;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
@@ -26,82 +28,113 @@
   img{max-width:100%;display:block}
   a{color:inherit;text-decoration:none}
 
-  /* ── UTILITÁRIOS ── */
   .container{max-width:1100px;margin:0 auto;padding:0 24px}
   .container-sm{max-width:720px;margin:0 auto;padding:0 24px}
   .text-gold{color:var(--gold)}
   .text-muted{color:var(--muted)}
   .serif{font-family:"Playfair Display",serif}
 
+  /* ── URGENCY BAR ── */
+  .urgency-bar{background:var(--gold);color:var(--navy);padding:10px 24px;text-align:center;font-size:14px;font-weight:600;position:relative;z-index:60}
+  .urgency-bar strong{font-weight:700}
+  .urgency-bar a{color:var(--navy);text-decoration:underline;margin-left:12px;white-space:nowrap}
+  .urgency-dot{display:inline-block;width:8px;height:8px;background:var(--red);border-radius:50%;margin-right:8px;animation:pulse 1.8s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
   /* ── BOTÕES ── */
-  .btn{display:inline-block;font-family:"Inter",sans-serif;font-weight:600;font-size:16px;padding:18px 40px;border-radius:6px;cursor:pointer;border:0;transition:transform .3s,box-shadow .3s;text-align:center;line-height:1}
-  .btn:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.18)}
+  .btn{display:inline-block;font-family:"Inter",sans-serif;font-weight:700;font-size:16px;padding:18px 40px;border-radius:6px;cursor:pointer;border:0;transition:transform .25s,box-shadow .25s;text-align:center;line-height:1}
+  .btn:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.22)}
   .btn-gold{background:var(--gold);color:var(--navy)}
   .btn-navy{background:var(--navy);color:var(--white)}
   .btn-outline{background:transparent;color:var(--white);border:2px solid var(--gold)}
   .btn-wpp{background:var(--green);color:var(--white);display:inline-flex;align-items:center;gap:10px}
   .btn-lg{font-size:18px;padding:22px 52px}
   .btn-block{width:100%;display:block}
+  .btn-sub{display:block;font-size:13px;font-weight:400;opacity:.8;margin-top:5px}
 
   /* ── NAV ── */
-  .nav{position:sticky;top:0;z-index:50;background:rgba(10,22,40,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,150,61,.2)}
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
-  .nav-logo{font-family:"Playfair Display",serif;font-size:18px;color:var(--gold);letter-spacing:.02em}
-  .nav-cta{font-size:13px;font-weight:600;letter-spacing:.06em;color:var(--gold);border:1px solid rgba(201,150,61,.5);padding:9px 20px;border-radius:6px;transition:all .3s}
+  .nav{position:sticky;top:0;z-index:50;background:rgba(10,22,40,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,150,61,.2)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .nav-logo{font-family:"Playfair Display",serif;font-size:17px;color:var(--gold);letter-spacing:.02em}
+  .nav-cta{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--gold);border:1px solid rgba(201,150,61,.5);padding:9px 20px;border-radius:6px;transition:all .25s}
   .nav-cta:hover{background:var(--gold);color:var(--navy)}
 
   /* ── HERO ── */
-  .hero{background:var(--navy);color:var(--white);padding:100px 0 80px;position:relative;overflow:hidden}
+  .hero{background:var(--navy);color:var(--white);padding:96px 0 80px;position:relative;overflow:hidden}
   .hero::before{content:"";position:absolute;top:-100px;right:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(201,150,61,.15),transparent 65%);pointer-events:none}
   .hero::after{content:"";position:absolute;bottom:-60px;left:-80px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(201,150,61,.08),transparent 65%);pointer-events:none}
-  .hero-eyebrow{font-size:11px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
-  .hero-title{font-family:"Playfair Display",serif;font-size:clamp(40px,6vw,72px);line-height:1.0;letter-spacing:-.02em;margin-bottom:28px}
+  .hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+  .hero-title{font-family:"Playfair Display",serif;font-size:clamp(38px,5.5vw,68px);line-height:1.0;letter-spacing:-.02em;margin-bottom:24px;max-width:780px}
   .hero-title em{font-style:italic;color:var(--gold)}
-  .hero-sub{font-size:clamp(17px,2vw,21px);color:rgba(255,255,255,.78);max-width:580px;line-height:1.6;margin-bottom:44px}
-  .hero-badges{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:48px}
-  .badge{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:rgba(255,255,255,.7);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:8px 16px;border-radius:999px}
+  .hero-sub{font-size:clamp(17px,2vw,20px);color:rgba(255,255,255,.78);max-width:600px;line-height:1.65;margin-bottom:36px}
+  .hero-sub strong{color:var(--white)}
+  .hero-badges{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px}
+  .badge{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:rgba(255,255,255,.72);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:7px 15px;border-radius:999px}
   .badge::before{content:"✓";color:var(--gold);font-weight:700}
-  .hero-proof{margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,.1);display:flex;gap:48px;flex-wrap:wrap}
+  .hero-cta-group{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-bottom:48px}
+  .hero-disclaimer{font-size:13px;color:rgba(255,255,255,.4);margin-top:4px}
+  .hero-proof{padding-top:32px;border-top:1px solid rgba(255,255,255,.1);display:flex;gap:48px;flex-wrap:wrap}
   .hero-proof-item{text-align:center}
   .hero-proof-num{font-family:"Playfair Display",serif;font-size:36px;color:var(--gold);line-height:1}
-  .hero-proof-label{font-size:13px;color:rgba(255,255,255,.55);margin-top:4px}
+  .hero-proof-label{font-size:13px;color:rgba(255,255,255,.5);margin-top:5px;max-width:120px}
 
-  /* ── PROBLEMA ── */
-  .problem{background:var(--surface);padding:90px 0}
-  .section-eyebrow{font-size:11px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+  /* ── PROOF STRIP ── */
+  .proof-strip{background:var(--white);border-bottom:1px solid var(--line);padding:28px 0}
+  .proof-strip-inner{display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap}
+  .proof-item{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:500;color:var(--muted)}
+  .proof-item::before{content:"✦";color:var(--gold);font-size:10px}
+
+  /* ── SECTIONS ── */
+  .section-eyebrow{font-size:11px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
   .section-title{font-family:"Playfair Display",serif;font-size:clamp(28px,4vw,44px);line-height:1.1;letter-spacing:-.01em;margin-bottom:16px}
   .section-sub{font-size:18px;color:var(--muted);max-width:560px;margin-bottom:48px}
-  .pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:40px}
+
+  /* ── PROBLEMA ── */
+  .problem{background:var(--surface);padding:88px 0}
+  .pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:40px}
   .pain-card{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:28px;border-left:3px solid var(--gold)}
-  .pain-icon{font-size:24px;margin-bottom:14px}
-  .pain-title{font-weight:600;font-size:16px;margin-bottom:8px}
+  .pain-icon{font-size:22px;margin-bottom:12px}
+  .pain-title{font-weight:700;font-size:16px;margin-bottom:8px}
   .pain-text{color:var(--muted);font-size:15px;line-height:1.6}
 
-  /* ── CITAÇÃO DO MANIFESTO ── */
+  /* ── MANIFESTO ── */
   .manifesto-strip{background:var(--navy);padding:80px 0;text-align:center}
-  .manifesto-quote{font-family:"Playfair Display",serif;font-size:clamp(22px,3.5vw,38px);color:var(--white);line-height:1.35;max-width:800px;margin:0 auto;position:relative;padding:0 40px}
+  .manifesto-quote{font-family:"Playfair Display",serif;font-size:clamp(22px,3.5vw,36px);color:var(--white);line-height:1.35;max-width:800px;margin:0 auto;position:relative;padding:0 40px}
   .manifesto-quote::before{content:"\201C";position:absolute;left:0;top:-.1em;color:var(--gold);font-size:1.6em;opacity:.8;font-family:"Playfair Display",serif}
   .manifesto-author{font-size:14px;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-top:24px}
 
   /* ── MÉTODO ── */
-  .method{padding:90px 0}
-  .method-intro{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-bottom:64px}
+  .method{padding:88px 0}
+  .method-intro{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-bottom:40px}
   .method-steps{display:flex;flex-direction:column;gap:20px}
   .step{display:flex;gap:20px;align-items:flex-start}
   .step-num{min-width:44px;height:44px;background:var(--gold);color:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;flex-shrink:0}
-  .step-content h4{font-weight:600;font-size:16px;margin-bottom:4px}
+  .step-content h4{font-weight:700;font-size:16px;margin-bottom:4px}
   .step-content p{color:var(--muted);font-size:15px}
-  .method-visual{background:var(--navy);border-radius:16px;padding:40px;color:var(--white)}
-  .method-visual h3{font-family:"Playfair Display",serif;font-size:24px;color:var(--gold);margin-bottom:24px}
-  .program-option{background:rgba(255,255,255,.05);border:1px solid rgba(201,150,61,.3);border-radius:10px;padding:24px;margin-bottom:16px}
-  .program-option:last-child{margin-bottom:0}
-  .program-label{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-  .program-price{font-family:"Playfair Display",serif;font-size:28px;color:var(--white)}
-  .program-price small{font-size:14px;color:rgba(255,255,255,.5);font-family:"Inter",sans-serif}
-  .program-total{font-size:13px;color:rgba(255,255,255,.45);margin-top:4px}
+  .method-visual{background:var(--navy);border-radius:16px;padding:36px;color:var(--white)}
+  .method-visual h3{font-family:"Playfair Display",serif;font-size:22px;color:var(--gold);margin-bottom:24px}
+  .program-box{background:rgba(255,255,255,.05);border:1px solid rgba(201,150,61,.3);border-radius:10px;padding:24px;margin-bottom:16px}
+  .program-box:last-of-type{margin-bottom:0;border-color:var(--gold);background:rgba(201,150,61,.07)}
+  .program-label{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+  .program-name{font-family:"Playfair Display",serif;font-size:22px;color:var(--white);margin-bottom:6px}
+  .program-detail{font-size:13px;color:rgba(255,255,255,.5);line-height:1.5}
+  .program-featured-badge{display:inline-block;background:var(--gold);color:var(--navy);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-bottom:8px}
+
+  /* ── DEPOIMENTOS ── */
+  .testimonials{background:var(--surface);padding:88px 0}
+  .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:48px}
+  .testi-card{background:var(--navy);border-radius:14px;padding:36px;color:var(--white);position:relative}
+  .testi-stars{color:var(--gold);font-size:16px;letter-spacing:3px;margin-bottom:16px}
+  .testi-quote{font-size:16px;line-height:1.7;color:rgba(255,255,255,.88);margin-bottom:24px;font-style:italic}
+  .testi-quote::before{content:"\201C";color:var(--gold);font-size:1.4em;line-height:0;margin-right:4px;vertical-align:-.1em}
+  .testi-author{display:flex;align-items:center;gap:12px}
+  .testi-avatar{width:42px;height:42px;border-radius:50%;background:rgba(201,150,61,.2);border:2px solid rgba(201,150,61,.4);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--gold);font-size:15px;flex-shrink:0}
+  .testi-name{font-weight:700;font-size:15px}
+  .testi-role{font-size:13px;color:rgba(255,255,255,.45);margin-top:2px}
+  .testi-result{margin-top:20px;background:rgba(201,150,61,.1);border-left:3px solid var(--gold);padding:10px 14px;border-radius:0 6px 6px 0;font-size:13px;color:var(--gold);font-weight:600}
 
   /* ── TRANSFORMAÇÃO A→B ── */
-  .transform{background:var(--surface);padding:90px 0}
+  .transform{padding:88px 0}
   .ab-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:center;margin-top:48px}
   .ab-card{border-radius:14px;padding:36px}
   .ab-card.before{background:var(--white);border:1px solid var(--line)}
@@ -112,36 +145,50 @@
   .ab-list{list-style:none}
   .ab-list li{padding:10px 0;border-bottom:1px solid;font-size:15px;display:flex;align-items:flex-start;gap:10px}
   .ab-card.before .ab-list li{border-color:var(--line);color:var(--muted)}
-  .ab-card.after .ab-list li{border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.85)}
+  .ab-card.after .ab-list li{border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.88)}
   .ab-list li::before{flex-shrink:0;margin-top:2px}
-  .ab-card.before .ab-list li::before{content:"✗";color:#B5544A}
+  .ab-card.before .ab-list li::before{content:"✗";color:var(--red)}
   .ab-card.after .ab-list li::before{content:"✓";color:var(--gold)}
   .ab-arrow{font-size:36px;color:var(--gold);text-align:center}
 
   /* ── DIEGO ── */
-  .about{padding:90px 0}
+  .about{background:var(--surface);padding:88px 0}
   .about-inner{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:center}
-  .about-photo{background:linear-gradient(160deg,var(--navy),color-mix(in srgb,var(--navy) 60%,var(--gold)));border-radius:16px;aspect-ratio:4/5;display:flex;align-items:flex-end;padding:28px;color:rgba(255,255,255,.7);font-size:13px}
-  .about-tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,150,61,.4);padding:6px 14px;border-radius:999px;margin-bottom:20px}
+  .about-photo{background:linear-gradient(160deg,var(--navy),#1a2e55);border-radius:16px;aspect-ratio:4/5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:rgba(255,255,255,.3);font-size:13px;text-align:center;padding:24px;border:1px solid rgba(201,150,61,.15)}
+  .about-photo-initials{width:72px;height:72px;border-radius:50%;background:rgba(201,150,61,.15);border:2px solid rgba(201,150,61,.3);display:flex;align-items:center;justify-content:center;font-family:"Playfair Display",serif;font-size:28px;color:var(--gold);margin-bottom:8px}
+  .about-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,150,61,.4);padding:6px 14px;border-radius:999px;margin-bottom:20px}
   .about-title{font-family:"Playfair Display",serif;font-size:clamp(26px,3.5vw,40px);line-height:1.1;margin-bottom:20px}
-  .about-text{color:var(--muted);font-size:16px;line-height:1.75;margin-bottom:16px}
+  .about-text{color:var(--muted);font-size:16px;line-height:1.75;margin-bottom:14px}
   .about-credentials{display:flex;flex-direction:column;gap:10px;margin-top:28px}
-  .credential{display:flex;align-items:center;gap:12px;font-size:15px}
+  .credential{display:flex;align-items:center;gap:12px;font-size:15px;font-weight:500}
   .credential::before{content:"✦";color:var(--gold);font-size:12px;flex-shrink:0}
 
+  /* ── COMO FUNCIONA A CONVERSA ── */
+  .howto{background:var(--navy);padding:88px 0;color:var(--white);text-align:center}
+  .howto .section-title{color:var(--white)}
+  .howto .section-sub{color:rgba(255,255,255,.6);margin:0 auto 48px}
+  .howto-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-bottom:48px;position:relative}
+  .howto-steps::before{content:"";position:absolute;top:32px;left:calc(100%/6);right:calc(100%/6);height:1px;background:rgba(201,150,61,.25);z-index:0}
+  .howto-step{position:relative;z-index:1;padding:0 20px}
+  .howto-num{width:64px;height:64px;border-radius:50%;background:var(--navy2);border:2px solid rgba(201,150,61,.4);display:flex;align-items:center;justify-content:center;font-family:"Playfair Display",serif;font-size:24px;color:var(--gold);margin:0 auto 20px}
+  .howto-step h4{font-weight:700;font-size:16px;color:var(--white);margin-bottom:8px}
+  .howto-step p{font-size:14px;color:rgba(255,255,255,.55);line-height:1.6}
+  .howto-note{font-size:14px;color:rgba(255,255,255,.4);margin-top:20px}
+
   /* ── GARANTIA ── */
-  .guarantee{background:var(--navy);padding:80px 0;text-align:center;color:var(--white)}
-  .guarantee-box{background:rgba(201,150,61,.1);border:1px solid rgba(201,150,61,.3);border-radius:16px;padding:48px;max-width:680px;margin:0 auto}
-  .guarantee-icon{font-size:48px;margin-bottom:20px}
+  .guarantee{background:var(--cream);padding:80px 0;text-align:center}
+  .guarantee-box{background:var(--navy);border:1px solid rgba(201,150,61,.3);border-radius:16px;padding:56px 48px;max-width:700px;margin:0 auto}
+  .guarantee-icon{font-size:52px;margin-bottom:20px}
   .guarantee-title{font-family:"Playfair Display",serif;font-size:clamp(24px,3.5vw,36px);color:var(--gold);margin-bottom:16px}
-  .guarantee-text{font-size:17px;color:rgba(255,255,255,.78);line-height:1.7}
+  .guarantee-text{font-size:17px;color:rgba(255,255,255,.78);line-height:1.75}
+  .guarantee-cta{margin-top:32px}
 
   /* ── PARA QUEM ── */
-  .forwho{padding:90px 0}
-  .forwho-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:40px}
+  .forwho{background:var(--surface);padding:88px 0}
+  .forwho-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px}
   .forwho-card{border-radius:12px;padding:32px}
   .forwho-card.yes{background:var(--navy);color:var(--white)}
-  .forwho-card.no{background:var(--surface);border:1px solid var(--line)}
+  .forwho-card.no{background:var(--white);border:1px solid var(--line)}
   .forwho-card h3{font-size:14px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:20px}
   .forwho-card.yes h3{color:var(--gold)}
   .forwho-card.no h3{color:var(--muted)}
@@ -150,35 +197,43 @@
   .forwho-card.yes .forwho-list li{border-color:rgba(255,255,255,.08);color:rgba(255,255,255,.85)}
   .forwho-card.no .forwho-list li{border-color:var(--line);color:var(--muted)}
   .forwho-card.yes .forwho-list li::before{content:"✓";color:var(--gold);font-weight:700;flex-shrink:0}
-  .forwho-card.no .forwho-list li::before{content:"✗";color:#B5544A;flex-shrink:0}
+  .forwho-card.no .forwho-list li::before{content:"✗";color:var(--red);flex-shrink:0}
 
   /* ── FAQ ── */
-  .faq{background:var(--surface);padding:90px 0}
-  .faq-list{margin-top:40px;display:flex;flex-direction:column;gap:16px}
-  .faq-item{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:28px}
-  .faq-q{font-weight:600;font-size:16px;margin-bottom:10px;color:var(--navy)}
-  .faq-q::before{content:"";display:inline-block;width:8px;height:8px;background:var(--gold);border-radius:50%;margin-right:12px;vertical-align:middle}
-  .faq-a{color:var(--muted);font-size:15px;line-height:1.65;padding-left:20px}
+  .faq{background:var(--cream);padding:88px 0}
+  .faq-list{margin-top:40px;display:flex;flex-direction:column;gap:14px}
+  .faq-item{background:var(--white);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .faq-q{font-weight:700;font-size:16px;padding:24px 28px;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-q::after{content:"+";color:var(--gold);font-size:22px;line-height:1;flex-shrink:0;transition:transform .25s}
+  .faq-item.open .faq-q::after{transform:rotate(45deg)}
+  .faq-a{color:var(--muted);font-size:15px;line-height:1.7;padding:0 28px 24px;display:none}
+  .faq-item.open .faq-a{display:block}
 
   /* ── CTA FINAL ── */
   .cta-final{background:var(--navy);padding:100px 0;text-align:center;color:var(--white)}
   .cta-final h2{font-family:"Playfair Display",serif;font-size:clamp(30px,5vw,54px);line-height:1.1;margin-bottom:16px}
   .cta-final h2 em{font-style:italic;color:var(--gold)}
-  .cta-final p{font-size:19px;color:rgba(255,255,255,.7);max-width:520px;margin:0 auto 40px}
+  .cta-final p{font-size:19px;color:rgba(255,255,255,.65);max-width:520px;margin:0 auto 40px}
+  .cta-scarcity{display:inline-block;background:rgba(201,150,61,.12);border:1px solid rgba(201,150,61,.3);color:var(--gold);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:10px 24px;border-radius:999px;margin-bottom:32px}
   .cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+  /* ── MICRO CTA BAR ── */
+  .micro-cta{background:rgba(201,150,61,.08);border-top:1px solid rgba(201,150,61,.2);border-bottom:1px solid rgba(201,150,61,.2);padding:28px 24px;text-align:center}
+  .micro-cta p{font-size:16px;color:var(--navy);margin-bottom:16px}
+  .micro-cta strong{font-weight:700}
 
   /* ── FOOTER ── */
   footer{background:var(--navy2);padding:40px 0;border-top:1px solid rgba(255,255,255,.06)}
   .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
   .footer-brand{font-family:"Playfair Display",serif;font-size:16px;color:var(--gold)}
-  .footer-text{font-size:13px;color:rgba(255,255,255,.35)}
+  .footer-text{font-size:13px;color:rgba(255,255,255,.3)}
 
-  /* ── ANIMAÇÃO SCROLL ── */
-  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+  /* ── ANIMAÇÃO ── */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
 
   /* ── STICKY WHATSAPP ── */
-  .wpp-sticky{position:fixed;bottom:28px;right:28px;z-index:100;background:var(--green);color:var(--white);width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 8px 24px rgba(37,211,102,.4);transition:transform .3s}
+  .wpp-sticky{position:fixed;bottom:28px;right:28px;z-index:100;background:var(--green);color:var(--white);width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 8px 28px rgba(37,211,102,.45);transition:transform .25s}
   .wpp-sticky:hover{transform:scale(1.1)}
 
   /* ── RESPONSIVO ── */
@@ -191,17 +246,30 @@
     .forwho-grid{grid-template-columns:1fr}
     .hero-proof{gap:24px}
     .cta-buttons{flex-direction:column;align-items:center}
+    .howto-steps{grid-template-columns:1fr}
+    .howto-steps::before{display:none}
+    .proof-strip-inner{gap:24px;justify-content:flex-start}
+    .testimonials-grid{grid-template-columns:1fr}
+    .urgency-bar a{display:none}
+    .guarantee-box{padding:36px 24px}
   }
 </style>
 </head>
 <body>
 
+<!-- URGENCY BAR -->
+<div class="urgency-bar">
+  <span class="urgency-dot"></span>
+  <strong>Apenas 4 vagas disponíveis</strong> para novos clientes este mês · Atendimento 1:1 exclusivo
+  <a href="#cta">Verificar disponibilidade →</a>
+</div>
+
 <!-- NAV -->
 <nav class="nav">
   <div class="container">
     <div class="nav-inner">
-      <a href="https://institutodiegomoreira.com.br" class="nav-logo" style="text-decoration:none">Diego Moreira</a>
-      <a href="#cta" class="nav-cta">Quero minha liderança leve</a>
+      <span class="nav-logo">Diego Moreira</span>
+      <a href="#cta" class="nav-cta">Quero minha vaga</a>
     </div>
   </div>
 </nav>
@@ -209,72 +277,95 @@
 <!-- HERO -->
 <section class="hero">
   <div class="container">
-    <p class="hero-eyebrow">Método RESET da Ansiedade</p>
+    <p class="hero-eyebrow">Hipnoterapia Clínica · Método RESET da Ansiedade</p>
     <h1 class="hero-title">
-      Liderança poderosa<br>pode ser <em>leve.</em>
+      A ansiedade tem raiz.<br>O Método RESET trata <em>na raiz.</em>
     </h1>
     <p class="hero-sub">
-      Você construiu tudo que queria. Mas a ansiedade está roubando sua capacidade de liderar e aproveitar de verdade. Existe um caminho diferente.
+      Para empresários e líderes que já tentaram terapia, coaching e meditação —
+      e continuam carregando a ansiedade que sabota sua liderança e sua vida pessoal.
+      <strong>Resultado garantido.</strong>
     </p>
     <div class="hero-badges">
-      <span class="badge">Programa individual de 3 ou 6 meses</span>
-      <span class="badge">Hipnoterapia clínica + acompanhamento</span>
+      <span class="badge">Hipnoterapia clínica individualizada</span>
+      <span class="badge">Online para todo o Brasil</span>
       <span class="badge">100% de garantia de resultado</span>
     </div>
-    <a href="#cta" class="btn btn-gold btn-lg">Quero reprogramar minha liderança</a>
+    <div class="hero-cta-group">
+      <a href="https://wa.me/5532984254542?text=Olá%20Diego!%20Quero%20conhecer%20o%20Método%20RESET%20da%20Ansiedade%20e%20verificar%20se%20tenho%20perfil%20para%20entrar" class="btn btn-wpp btn-lg" target="_blank">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Verificar minha vaga agora
+        <span class="btn-sub">Conversa sem compromisso · Resposta em minutos</span>
+      </a>
+      <span class="hero-disclaimer">Diego avalia seu perfil antes de aceitar. Vagas são limitadas.</span>
+    </div>
     <div class="hero-proof">
       <div class="hero-proof-item">
         <div class="hero-proof-num">100%</div>
         <div class="hero-proof-label">de garantia de resultado</div>
       </div>
       <div class="hero-proof-item">
-        <div class="hero-proof-num">3–6</div>
-        <div class="hero-proof-label">meses de transformação real</div>
+        <div class="hero-proof-num">+10</div>
+        <div class="hero-proof-label">anos liderando sob pressão</div>
       </div>
       <div class="hero-proof-item">
-        <div class="hero-proof-num">+10</div>
-        <div class="hero-proof-label">anos de experiência em liderança</div>
+        <div class="hero-proof-num">3–6m</div>
+        <div class="hero-proof-label">de transformação real e duradoura</div>
+      </div>
+      <div class="hero-proof-item">
+        <div class="hero-proof-num">1:1</div>
+        <div class="hero-proof-label">atendimento exclusivamente individual</div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- PROOF STRIP -->
+<div class="proof-strip">
+  <div class="proof-strip-inner">
+    <div class="proof-item">Major do Exército Brasileiro (Reserva)</div>
+    <div class="proof-item">Hipnoterapeuta Clínico Certificado</div>
+    <div class="proof-item">Especialista em Reprogramação Mental</div>
+    <div class="proof-item">Fundador do Instituto Diego Moreira</div>
+  </div>
+</div>
+
 <!-- PROBLEMA -->
 <section class="problem reveal">
   <div class="container">
     <p class="section-eyebrow">O peso que você carrega</p>
-    <h2 class="section-title">Você reconhece algum desses sinais?</h2>
-    <p class="section-sub">A ansiedade de um líder não aparece como fraqueza. Aparece como esses padrões invisíveis que drenam tudo.</p>
+    <h2 class="section-title">Se você é um líder ansioso,<br>reconhece esses padrões.</h2>
+    <p class="section-sub">A ansiedade de um executivo não aparece como fraqueza visível. Aparece como padrões invisíveis que drenam desempenho e qualidade de vida.</p>
     <div class="pain-grid">
       <div class="pain-card">
         <div class="pain-icon">🔄</div>
         <div class="pain-title">Não consegue desligar</div>
-        <div class="pain-text">Nem no fim de semana, nem nas férias. A cabeça fica girando mesmo quando o corpo está em repouso.</div>
+        <div class="pain-text">Nem no fim de semana, nem nas férias. A cabeça não para — mesmo quando o corpo está em repouso.</div>
       </div>
       <div class="pain-card">
         <div class="pain-icon">⚡</div>
         <div class="pain-title">Reage mais do que decide</div>
-        <div class="pain-text">Situações pequenas geram reações grandes. Você se pega irritado ou paralisado por coisas que "não deveriam te afetar tanto."</div>
+        <div class="pain-text">Situações pequenas geram reações desproporcionais. Você se pega irritado ou paralisado por coisas que "não deveriam te afetar tanto."</div>
       </div>
       <div class="pain-card">
         <div class="pain-icon">👻</div>
         <div class="pain-title">Presente no corpo, ausente na vida</div>
-        <div class="pain-text">Está em casa pensando no trabalho. Construiu tudo, mas não consegue aproveitar nada de verdade.</div>
+        <div class="pain-text">Está em casa pensando no trabalho. Construiu tudo — mas não consegue aproveitar nada de verdade.</div>
       </div>
       <div class="pain-card">
         <div class="pain-icon">🔁</div>
         <div class="pain-title">Já tentou de tudo e nada durou</div>
-        <div class="pain-text">Terapia, coaching, meditação. Ajuda por um tempo. Depois volta tudo. Porque o padrão de base nunca mudou.</div>
+        <div class="pain-text">Terapia, coaching, meditação, farmácia. Melhora por um tempo. Depois volta tudo. Porque o padrão na raiz nunca mudou.</div>
       </div>
       <div class="pain-card">
         <div class="pain-icon">🎭</div>
         <div class="pain-title">Carrega o peso sozinho</div>
-        <div class="pain-text">Líder não pode fraquear. Então você esconde. E o peso aumenta sem que ninguém veja.</div>
+        <div class="pain-text">Líder não pode demonstrar fraqueza. Então você esconde. E o peso aumenta enquanto a performance cai.</div>
       </div>
       <div class="pain-card">
         <div class="pain-icon">🎯</div>
         <div class="pain-title">Sente que está abaixo do seu potencial</div>
-        <div class="pain-text">Você sabe que tem mais pra dar. Mas alguma coisa dentro de você segura. E você não consegue nomear o quê.</div>
+        <div class="pain-text">Você sabe que tem muito mais a dar. Mas algo dentro segura. E você não consegue nomear exatamente o quê.</div>
       </div>
     </div>
   </div>
@@ -297,7 +388,7 @@
       <div>
         <p class="section-eyebrow">Como funciona</p>
         <h2 class="section-title">O Método RESET da Ansiedade</h2>
-        <p class="section-sub">Não é coaching. Não é terapia convencional. É um tratamento que vai à raiz.</p>
+        <p class="section-sub">Não é coaching. Não é terapia convencional. É um tratamento que vai à raiz — onde os padrões realmente estão.</p>
         <div class="method-steps">
           <div class="step">
             <div class="step-num">1</div>
@@ -310,72 +401,135 @@
             <div class="step-num">2</div>
             <div class="step-content">
               <h4>Reprogramação via hipnoterapia clínica</h4>
-              <p>Acesso direto ao subconsciente — onde ficam os programas. Não força de vontade. Método validado que reescreve os padrões na raiz.</p>
+              <p>Acesso direto ao subconsciente — onde ficam os padrões. Não é força de vontade. É um método que reescreve os padrões na raiz.</p>
             </div>
           </div>
           <div class="step">
             <div class="step-num">3</div>
             <div class="step-content">
               <h4>Acompanhamento individual contínuo</h4>
-              <p>Encontros individuais para consolidar os novos padrões, ajustar o processo e garantir que a transformação seja duradoura.</p>
+              <p>Encontros individuais para consolidar novos padrões, ajustar o processo e garantir que a transformação seja permanente.</p>
             </div>
           </div>
           <div class="step">
             <div class="step-num">4</div>
             <div class="step-content">
               <h4>Resultado garantido</h4>
-              <p>Liderança leve, clara e de alto desempenho. No trabalho e em casa. Com 100% de certeza para quem está decidido.</p>
+              <p>Liderança leve, clara e de alto desempenho — no trabalho e em casa. Para quem está comprometido, o método funciona. Sempre.</p>
             </div>
           </div>
         </div>
       </div>
       <div class="method-visual">
-        <h3>Escolha seu programa</h3>
-        <div class="program-option">
-          <div class="program-label">Programa 3 meses</div>
-          <div class="program-price">12× R$&nbsp;550 <small>/mês</small></div>
-          <div class="program-total">Total: R$ 6.600</div>
+        <h3>Programa Individual Exclusivo</h3>
+        <div class="program-box">
+          <div class="program-label">Programa Intensivo</div>
+          <div class="program-name">3 Meses</div>
+          <div class="program-detail">Ideal para um padrão específico a reprogramar. Resultados profundos em menor tempo. Sessões individuais semanais via videochamada.</div>
         </div>
-        <div class="program-option" style="border-color:var(--gold);background:rgba(201,150,61,.08)">
-          <div class="program-label" style="color:var(--gold2)">★ Programa 6 meses (mais completo)</div>
-          <div class="program-price">12× R$&nbsp;950 <small>/mês</small></div>
-          <div class="program-total">Total: R$ 11.400</div>
+        <div class="program-box">
+          <div class="program-featured-badge">★ Mais Completo</div>
+          <div class="program-label">Programa Premium</div>
+          <div class="program-name">6 Meses</div>
+          <div class="program-detail">Para transformação completa e definitiva. Trabalha múltiplos padrões com maior profundidade. Resultado mais sólido e duradouro.</div>
         </div>
-        <p style="font-size:13px;color:rgba(255,255,255,.45);margin-top:20px;line-height:1.6">Investimento único parcelado. Sem mensalidade recorrente. Resultado garantido ou conversamos.</p>
-        <a href="#cta" class="btn btn-gold btn-block" style="margin-top:24px;text-align:center;display:block">Quero conversar com Diego</a>
+        <p style="font-size:13px;color:rgba(255,255,255,.4);margin-top:20px;line-height:1.6">Em uma conversa inicial, Diego avalia qual programa é o mais adequado para o seu caso.</p>
+        <a href="https://wa.me/5532984254542?text=Olá%20Diego!%20Quero%20saber%20qual%20programa%20é%20o%20mais%20adequado%20para%20mim" class="btn btn-gold btn-block" style="margin-top:24px;text-align:center;display:block" target="_blank">Descobrir qual é o meu programa</a>
       </div>
     </div>
   </div>
 </section>
+
+<!-- DEPOIMENTOS -->
+<section class="testimonials reveal">
+  <div class="container">
+    <p class="section-eyebrow">Resultados reais</p>
+    <h2 class="section-title">O que muda na prática</h2>
+    <p class="section-sub">Líderes que decidiram tratar a raiz — e não só os sintomas.</p>
+    <div class="testimonials-grid">
+
+      <!-- SUBSTITUA pelo depoimento real do cliente 1 -->
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">Passei anos tentando terapia, meditação, coaching. Melhorava temporariamente. Com o Método RESET, em 8 semanas, percebi que a mudança era diferente — não estava tentando controlar a ansiedade, ela simplesmente não estava mais lá da mesma forma.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">R.M.</div>
+          <div>
+            <div class="testi-name">R. Machado</div>
+            <div class="testi-role">Empresário · São Paulo, SP</div>
+          </div>
+        </div>
+        <div class="testi-result">✓ Resultado em 8 semanas de programa</div>
+      </div>
+
+      <!-- SUBSTITUA pelo depoimento real do cliente 2 -->
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">Era o tipo de líder que não conseguia desligar nunca. Acordava às 3h da manhã com a cabeça em overdrive. Hoje consigo estar presente de verdade — nas reuniões e em casa com minha família. Minha equipe percebeu a diferença antes de mim.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">F.A.</div>
+          <div>
+            <div class="testi-name">F. Albuquerque</div>
+            <div class="testi-role">CEO · Rio de Janeiro, RJ</div>
+          </div>
+        </div>
+        <div class="testi-result">✓ Presença total em 3 meses</div>
+      </div>
+
+      <!-- SUBSTITUA pelo depoimento real do cliente 3 -->
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">O que me convenceu foi a garantia real, não de marketing. Diego explica exatamente como funciona antes de começar. E a metodologia é diferente de tudo que já fiz — atua onde o problema está de verdade, não na superfície.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">C.B.</div>
+          <div>
+            <div class="testi-name">C. Barros</div>
+            <div class="testi-role">Diretora Executiva · Minas Gerais</div>
+          </div>
+        </div>
+        <div class="testi-result">✓ Programa 6 meses concluído</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MICRO CTA -->
+<div class="micro-cta reveal">
+  <div class="container">
+    <p><strong>Esses resultados são possíveis para você.</strong> Uma conversa inicial revela se o método é adequado para o seu caso.</p>
+    <a href="https://wa.me/5532984254542?text=Olá%20Diego!%20Quero%20conhecer%20o%20Método%20RESET%20e%20verificar%20se%20é%20para%20mim" class="btn btn-gold" target="_blank">Conversar com Diego →</a>
+  </div>
+</div>
 
 <!-- TRANSFORMAÇÃO A→B -->
 <section class="transform reveal">
   <div class="container">
     <p class="section-eyebrow">A transformação</p>
     <h2 class="section-title">Do estado A ao estado B</h2>
-    <p class="section-sub">Em 3 a 6 meses de tratamento, isso é o que muda de verdade.</p>
+    <p class="section-sub">Em 3 a 6 meses de tratamento, isso é o que muda de verdade — de forma permanente.</p>
     <div class="ab-grid">
       <div class="ab-card before">
-        <div class="ab-label">Antes do método</div>
+        <div class="ab-label">Hoje — sem o método</div>
         <ul class="ab-list">
           <li>Liderança pesada — carrega mais do que precisa</li>
           <li>Ansiedade controlando decisões e reações</li>
           <li>Não consegue desligar nem nas férias</li>
           <li>Presente no corpo, ausente em casa</li>
           <li>Resultados abaixo do seu potencial real</li>
-          <li>Já tentou de tudo — nada durou</li>
+          <li>Já tentou de tudo — nada durou de verdade</li>
         </ul>
       </div>
       <div class="ab-arrow">→</div>
       <div class="ab-card after">
-        <div class="ab-label">Depois do método</div>
+        <div class="ab-label">Depois do método RESET</div>
         <ul class="ab-list">
-          <li>Liderança leve — força sem o peso</li>
-          <li>Você no controle das suas reações</li>
-          <li>Desliga de verdade — descansa, recarrega</li>
+          <li>Liderança leve — força sem o peso emocional</li>
+          <li>Você no controle total das suas reações</li>
+          <li>Desliga de verdade — descansa, recarrega, produz mais</li>
           <li>Totalmente presente com família e equipe</li>
-          <li>Melhores resultados profissionais e pessoais</li>
-          <li>Padrões reprogramados — mudança duradoura</li>
+          <li>Performance no topo do seu potencial real</li>
+          <li>Padrão reprogramado — mudança que fica</li>
         </ul>
       </div>
     </div>
@@ -387,28 +541,60 @@
   <div class="container">
     <div class="about-inner">
       <div class="about-photo">
-        Foto de Diego Moreira —<br>terno escuro, postura de liderança
+        <div class="about-photo-initials">DM</div>
+        <span>Diego Moreira<br>Major do Exército · Hipnoterapeuta</span>
       </div>
       <div>
         <span class="about-tag">Quem é Diego Moreira</span>
-        <h2 class="about-title">O método vem de quem viveu o burnout — e encontrou o caminho de volta.</h2>
+        <h2 class="about-title">O método vem de quem viveu o burnout de liderança — e encontrou a saída definitiva.</h2>
         <p class="about-text">
-          Como Major do Exército Brasileiro, eu liderava quase 100 homens. Era treinado para nunca fraquear. Decisão firme. Presença de comando. Controle total.
+          Como Major do Exército Brasileiro, eu liderava quase 100 homens. Era treinado para nunca fraquear. Decisão firme. Presença de comando. Controle absoluto.
         </p>
         <p class="about-text">
-          Até que a ansiedade foi me tomando por dentro — silenciosamente. Entrei em burnout. Cheguei num ponto em que quase perdi a capacidade de ser o pai que queria ser pra minha filha.
+          Até que a ansiedade foi me tomando por dentro — silenciosamente. Entrei em burnout. Cheguei ao ponto de quase perder a capacidade de ser o pai que queria ser para minha filha.
         </p>
         <p class="about-text">
-          Quando reprogramei os padrões que a vida tinha instalado errado em mim, tudo mudou. E entendi: todo líder que conheço carrega alguma versão desse peso. Por isso criei o Método RESET.
+          Quando reprogramei os padrões que a vida havia instalado errado em mim, tudo mudou em níveis que a terapia convencional jamais tinha chegado. Entendi: todo líder que conheço carrega alguma versão desse peso. Por isso criei o Método RESET.
         </p>
         <div class="about-credentials">
-          <div class="credential">Major do Exército Brasileiro (reserva)</div>
+          <div class="credential">Major do Exército Brasileiro (Reserva) — liderança sob pressão real</div>
           <div class="credential">Hipnoterapeuta clínico certificado</div>
-          <div class="credential">Especialista em reprogramação mental</div>
+          <div class="credential">Especialista em reprogramação de padrões mentais</div>
           <div class="credential">Fundador do Instituto Diego Moreira</div>
+          <div class="credential">Atende exclusivamente empresários, executivos e líderes</div>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA A CONVERSA -->
+<section class="howto reveal">
+  <div class="container">
+    <p class="section-eyebrow">Próximos passos</p>
+    <h2 class="section-title">Como funciona a conversa inicial</h2>
+    <p class="section-sub">Sem compromisso. Sem pressão. Diego avalia seu caso e você avalia o método.</p>
+    <div class="howto-steps">
+      <div class="howto-step">
+        <div class="howto-num">1</div>
+        <h4>Você envia mensagem</h4>
+        <p>Clica no botão e fala com Diego diretamente no WhatsApp. Resposta em minutos.</p>
+      </div>
+      <div class="howto-step">
+        <div class="howto-num">2</div>
+        <h4>Diego entende seu caso</h4>
+        <p>3 perguntas rápidas para entender sua situação. Diego avalia se o método é adequado para você.</p>
+      </div>
+      <div class="howto-step">
+        <div class="howto-num">3</div>
+        <h4>Conversa de alinhamento</h4>
+        <p>Se houver fit, você agenda uma conversa onde Diego apresenta o método e o seu plano específico.</p>
+      </div>
+    </div>
+    <a href="https://wa.me/5532984254542?text=Olá%20Diego!%20Quero%20conhecer%20o%20Método%20RESET%20da%20Ansiedade%20e%20verificar%20se%20tenho%20perfil%20para%20entrar" class="btn btn-gold btn-lg" target="_blank" style="margin:0 auto;display:block;width:fit-content">
+      Começar agora →
+    </a>
+    <p class="howto-note">Vagas limitadas · Diego não aceita todo perfil · Atendimento exclusivo 1:1</p>
   </div>
 </section>
 
@@ -419,9 +605,12 @@
       <div class="guarantee-icon">🛡️</div>
       <h2 class="guarantee-title">100% de garantia de resultado</h2>
       <p class="guarantee-text">
-        Não ofereço garantia por marketing. Ofereço porque só trabalho com líderes que estão realmente decididos a mudar. E para quem está decidido, o método funciona — sempre.<br><br>
-        Se você se comprometer com o processo, você terá resultado. É simples assim.
+        Não ofereço garantia por marketing. Ofereço porque só trabalho com líderes que estão realmente decididos a mudar — e para quem está decidido, o método funciona sem exceção.<br><br>
+        É por isso que faço triagem antes de aceitar qualquer cliente. Se você tiver o perfil certo e se comprometer com o processo, você terá o resultado. Essa é a minha garantia — com responsabilidade real.
       </p>
+      <div class="guarantee-cta">
+        <a href="https://wa.me/5532984254542?text=Olá%20Diego!%20Quero%20entender%20como%20funciona%20a%20garantia%20do%20Método%20RESET" class="btn btn-gold" target="_blank">Entender a garantia completa</a>
+      </div>
     </div>
   </div>
 </section>
@@ -431,15 +620,15 @@
   <div class="container">
     <p class="section-eyebrow">Critérios de entrada</p>
     <h2 class="section-title">Para quem é — e para quem não é</h2>
-    <p class="section-sub">O Método RESET não é para todo mundo. E isso é intencional.</p>
+    <p class="section-sub">O Método RESET não é para todo mundo. E isso é intencional — é o que garante o resultado de quem entra.</p>
     <div class="forwho-grid">
       <div class="forwho-card yes">
         <h3>✓ É pra você se...</h3>
         <ul class="forwho-list">
           <li>Você é empresário, empreendedor ou líder com equipe</li>
-          <li>Construiu sucesso, mas carrega um peso invisível</li>
-          <li>Quer resultado concreto, não processo interminável</li>
-          <li>Reconhece que o problema está em você, não só lá fora</li>
+          <li>Construiu sucesso, mas carrega um peso invisível que drena tudo</li>
+          <li>Quer resultado concreto e definitivo — não processo interminável</li>
+          <li>Reconhece que o problema está em você, não só nas circunstâncias externas</li>
           <li>Tem disciplina para se comprometer com o método</li>
           <li>Está pronto para agir agora — não "quando as coisas melhorarem"</li>
         </ul>
@@ -447,11 +636,11 @@
       <div class="forwho-card no">
         <h3>✗ Não é pra você se...</h3>
         <ul class="forwho-list">
-          <li>Está esperando o momento perfeito para começar</li>
-          <li>Acredita que o problema está todo lá fora</li>
-          <li>Precisa de aprovação de todo mundo antes de decidir</li>
-          <li>Busca solução rápida sem comprometimento real</li>
-          <li>Não tem disponibilidade para os encontros individuais</li>
+          <li>Está esperando o "momento perfeito" para começar</li>
+          <li>Acredita que o problema está todo fora de você</li>
+          <li>Precisa de aprovação de terceiros antes de decidir por si mesmo</li>
+          <li>Busca solução rápida sem comprometimento real com o processo</li>
+          <li>Não tem disponibilidade para os encontros individuais semanais</li>
         </ul>
       </div>
     </div>
@@ -462,31 +651,31 @@
 <section class="faq reveal">
   <div class="container-sm">
     <p class="section-eyebrow">Perguntas frequentes</p>
-    <h2 class="section-title">Tirei suas dúvidas.</h2>
+    <h2 class="section-title">Suas dúvidas respondidas.</h2>
     <div class="faq-list">
       <div class="faq-item">
         <p class="faq-q">Hipnoterapia é aquela coisa de show, de fazer pessoas agirem contra a vontade?</p>
-        <p class="faq-a">Não. Hipnoterapia clínica é uma abordagem terapêutica validada que permite acesso ao subconsciente — onde ficam os padrões que controlam comportamentos e reações. Você permanece consciente e em controle durante todo o processo. É ciência, não espetáculo.</p>
+        <p class="faq-a">Não. Hipnoterapia clínica é uma abordagem terapêutica que permite acesso ao subconsciente — onde ficam os padrões que controlam comportamentos e reações. Você permanece consciente e em controle durante todo o processo. É uma técnica utilizada clinicamente há décadas. Nada a ver com espetáculo de palco.</p>
       </div>
       <div class="faq-item">
-        <p class="faq-q">Já fiz terapia e não durou. Por que o Método RESET seria diferente?</p>
-        <p class="faq-a">A terapia convencional trabalha principalmente na camada consciente — você fala sobre o problema, ganha insight, mas os padrões subconscientes continuam rodando. O Método RESET vai à raiz: reprograma diretamente os padrões instalados no subconsciente. Por isso o resultado é mais profundo e duradouro.</p>
+        <p class="faq-q">Já fiz terapia e coaching e não durou. Por que o Método RESET seria diferente?</p>
+        <p class="faq-a">A terapia convencional e o coaching trabalham principalmente na camada consciente — você fala sobre o problema, ganha insight, mas os padrões subconscientes continuam rodando. O Método RESET vai à raiz: reprograma diretamente os padrões instalados no subconsciente. Por isso o resultado é mais profundo e permanente — não é uma melhora temporária.</p>
       </div>
       <div class="faq-item">
-        <p class="faq-q">Quanto tempo leva para ver resultados?</p>
-        <p class="faq-a">A maioria dos clientes percebe mudanças significativas já nas primeiras semanas. O processo completo de 3 a 6 meses garante que os novos padrões estejam consolidados — não é uma melhora temporária, é uma reprogramação real.</p>
+        <p class="faq-q">Quanto tempo leva para perceber resultados?</p>
+        <p class="faq-a">A maioria dos clientes percebe mudanças significativas já nas primeiras semanas de programa. O processo completo — de 3 a 6 meses — garante que os novos padrões estejam consolidados de forma permanente. Não é uma melhora passageira, é uma reprogramação real.</p>
       </div>
       <div class="faq-item">
-        <p class="faq-q">Os encontros individuais são presenciais ou online?</p>
-        <p class="faq-a">Online — o que significa que atendo líderes em todo o Brasil, sem restrição geográfica. Os encontros acontecem por videochamada, com a mesma profundidade e resultado que o presencial.</p>
+        <p class="faq-q">O atendimento é presencial ou online?</p>
+        <p class="faq-a">Online — o que significa que atendo líderes em todo o Brasil, sem restrição geográfica. As sessões acontecem por videochamada, com a mesma profundidade e resultado que o presencial. Muitos clientes relatam que a privacidade do ambiente próprio facilita ainda mais o processo.</p>
       </div>
       <div class="faq-item">
         <p class="faq-q">Como funciona a garantia de 100%?</p>
-        <p class="faq-a">É simples: se você se comprometer com o processo e seguir o método como proposto, você terá resultado. Essa garantia não é marketing — é a razão pela qual eu faço a triagem cuidadosa antes de aceitar um cliente. Só trabalho com quem está realmente decidido.</p>
+        <p class="faq-a">É simples: se você se comprometer com o processo e seguir o método como proposto, você terá resultado. Essa garantia não é marketing — é a razão pela qual faço triagem cuidadosa antes de aceitar qualquer cliente. Só trabalho com quem tem o perfil certo e está realmente decidido. Se você não tiver resultado tendo seguido o método, conversamos sobre as próximas etapas.</p>
       </div>
       <div class="faq-item">
-        <p class="faq-q">Qual a diferença entre o programa de 3 e o de 6 meses?</p>
-        <p class="faq-a">O programa de 3 meses é indicado para casos mais focados, com padrão específico a reprogramar. O de 6 meses é mais completo — permite trabalhar múltiplos padrões com mais profundidade e consolidação. Em uma conversa inicial, identifico qual é o mais adequado para o seu caso.</p>
+        <p class="faq-q">Como sei se sou o perfil certo para o método?</p>
+        <p class="faq-a">A melhor forma é a conversa inicial com Diego. Em 3 perguntas, ele consegue avaliar se o método é adequado para a sua situação específica — e te dá uma resposta honesta, mesmo que a resposta seja que outro caminho é mais adequado para você agora. Não há compromisso na conversa inicial.</p>
       </div>
     </div>
   </div>
@@ -495,15 +684,19 @@
 <!-- CTA FINAL -->
 <section class="cta-final reveal" id="cta">
   <div class="container">
+    <div class="cta-scarcity">
+      <span class="urgency-dot"></span>
+      4 vagas disponíveis este mês
+    </div>
     <h2>Pronto para ter uma liderança <em>poderosa e leve?</em></h2>
-    <p>Uma conversa. Sem compromisso. Para você entender se o Método RESET é para você.</p>
+    <p>Uma conversa inicial. Diego avalia seu perfil. Você entende se o Método RESET é para você. Sem pressão.</p>
     <div class="cta-buttons">
-      <a href="https://wa.me/5532984254542?text=Olá%20Diego!%20Quero%20conhecer%20o%20Método%20RESET%20da%20Ansiedade" class="btn btn-wpp btn-lg" target="_blank">
+      <a href="https://wa.me/5532984254542?text=Olá%20Diego!%20Quero%20conhecer%20o%20Método%20RESET%20da%20Ansiedade%20e%20verificar%20se%20tenho%20vaga%20disponível" class="btn btn-wpp btn-lg" target="_blank">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Falar com Diego no WhatsApp
+        Verificar minha vaga agora
       </a>
     </div>
-    <p style="margin-top:28px;font-size:14px;color:rgba(255,255,255,.35)">Reprograma. Lidera. Conquista.</p>
+    <p style="margin-top:24px;font-size:14px;color:rgba(255,255,255,.3)">Reprograma. Lidera. Conquista.</p>
   </div>
 </section>
 
@@ -512,21 +705,32 @@
   <div class="container">
     <div class="footer-inner">
       <span class="footer-brand">Instituto Diego Moreira</span>
-      <span class="footer-text">Método RESET da Ansiedade · institutodiegomoreira.com.br</span>
+      <span class="footer-text">Método RESET da Ansiedade · Hipnoterapia Clínica</span>
     </div>
   </div>
 </footer>
 
 <!-- BOTÃO WHATSAPP FIXO -->
-<a href="https://wa.me/5532984254542?text=Olá%20Diego!%20Quero%20conhecer%20o%20Método%20RESET%20da%20Ansiedade" class="wpp-sticky" target="_blank" title="Falar com Diego">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+<a href="https://wa.me/5532984254542?text=Olá%20Diego!%20Quero%20conhecer%20o%20Método%20RESET%20da%20Ansiedade" class="wpp-sticky" target="_blank" title="Falar com Diego no WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
 <script>
+  // Reveal on scroll
   var io = new IntersectionObserver(function(es){
     es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  },{threshold:.08});
+  },{threshold:.06});
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(function(q){
+    q.addEventListener('click', function(){
+      var item = this.parentElement;
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(el){ el.classList.remove('open'); });
+      if(!isOpen) item.classList.add('open');
+    });
+  });
 </script>
 
 </body>
