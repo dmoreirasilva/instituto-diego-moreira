@@ -258,6 +258,19 @@
     .guarantee-box{padding:36px 24px}
   }
 </style>
+
+<!-- ── Google Ads — Global Site Tag ──────────────────────────────────────────
+     AW-ID: confirme em Google Ads → Ferramentas → Conversões → Snippet da tag
+     Se o Google Ads mostrar um ID diferente, atualize AW-9557233046 abaixo.
+─────────────────────────────────────────────────────────────────────────────── -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-9557233046"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-9557233046', { allow_enhanced_conversions: true });
+</script>
+
 </head>
 <body>
 
@@ -736,6 +749,69 @@
       if(!isOpen) item.classList.add('open');
     });
   });
+</script>
+
+<!-- ── Rastreamento de Conversão — Cliques WhatsApp ─────────────────────────
+     Cada clique no botão WhatsApp = 1 lead = dispara evento de conversão.
+     APÓS criar a conversão em Google Ads → Ferramentas → Conversões → Nova Conversão → Website,
+     substitua LABEL_AQUI pelo label gerado (ex: "AbcDEF123ghiXYZ").
+─────────────────────────────────────────────────────────────────────────────── -->
+<script>
+(function(){
+  'use strict';
+
+  /* ─ Captura gclid (ID do clique do anúncio) e persiste na sessão ─ */
+  var params = new URLSearchParams(window.location.search);
+  var gclid  = params.get('gclid');
+  if(gclid) sessionStorage.setItem('gads_gclid', gclid);
+
+  /* ─ Dispara conversão ─ */
+  function lead(secao) {
+    if(typeof gtag === 'undefined') return;
+
+    /* Conversão principal — substitua LABEL_AQUI pelo label do Google Ads */
+    gtag('event', 'conversion', {
+      send_to : 'AW-9557233046/LABEL_AQUI',
+      value   : 1000.0,   /* valor estimado de um lead qualificado em R$ */
+      currency: 'BRL',
+      event_label: secao
+    });
+
+    /* Evento padrão do Google — alimenta Smart Bidding mesmo sem label */
+    gtag('event', 'generate_lead', {
+      currency: 'BRL',
+      value   : 1000.0,
+      event_category: 'Lead',
+      event_label   : secao
+    });
+  }
+
+  /* ─ Scroll depth como micro-conversão (ajuda o algoritmo a aprender) ─ */
+  var marcos = { 50: false, 80: false };
+  window.addEventListener('scroll', function() {
+    var pct = Math.round(window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100);
+    Object.keys(marcos).forEach(function(m) {
+      if(!marcos[m] && pct >= m) {
+        marcos[m] = true;
+        if(typeof gtag !== 'undefined') {
+          gtag('event', 'scroll_depth', { event_label: m + '%' });
+        }
+      }
+    });
+  }, { passive: true });
+
+  /* ─ Attach nos botões WhatsApp após DOM pronto ─ */
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('a[href*="wa.me"]').forEach(function(el) {
+      el.addEventListener('click', function() {
+        /* identifica a seção de origem pelo id mais próximo */
+        var sec = el.closest('[id]');
+        lead(sec ? sec.id : 'geral');
+      });
+    });
+  });
+
+})();
 </script>
 
 </body>
