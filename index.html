@@ -765,25 +765,38 @@
   var gclid  = params.get('gclid');
   if(gclid) sessionStorage.setItem('gads_gclid', gclid);
 
+  /* ─ Label da conversão (atualizar após criar em Google Ads > Metas > Conversões) ─ */
+  var CONVERSION_LABEL = '';  /* ex: 'AbCdEfGhIjKlMnOp' — preencher após criar a ação */
+
   /* ─ Dispara conversão ─ */
   function lead(secao) {
     if(typeof gtag === 'undefined') return;
 
-    /* Conversão principal — substitua LABEL_AQUI pelo label do Google Ads */
-    gtag('event', 'conversion', {
-      send_to : 'AW-9557233046/LABEL_AQUI',
-      value   : 1000.0,   /* valor estimado de um lead qualificado em R$ */
-      currency: 'BRL',
+    /* Evento de contato WhatsApp — sinal direto para Smart Bidding */
+    gtag('event', 'contact', {
+      method   : 'whatsapp',
+      currency : 'BRL',
+      value    : 1000.0,
       event_label: secao
     });
 
-    /* Evento padrão do Google — alimenta Smart Bidding mesmo sem label */
+    /* Geração de lead — padrão Google, alimenta Smart Bidding imediatamente */
     gtag('event', 'generate_lead', {
-      currency: 'BRL',
-      value   : 1000.0,
+      currency     : 'BRL',
+      value        : 1000.0,
       event_category: 'Lead',
-      event_label   : secao
+      event_label  : secao
     });
+
+    /* Conversão rastreada no painel Google Ads (ativa quando CONVERSION_LABEL preenchido) */
+    if(CONVERSION_LABEL) {
+      gtag('event', 'conversion', {
+        send_to  : 'AW-9557233046/' + CONVERSION_LABEL,
+        value    : 1000.0,
+        currency : 'BRL',
+        event_label: secao
+      });
+    }
   }
 
   /* ─ Scroll depth como micro-conversão (ajuda o algoritmo a aprender) ─ */
