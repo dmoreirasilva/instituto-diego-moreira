@@ -260,15 +260,15 @@
 </style>
 
 <!-- ── Google Ads — Global Site Tag ──────────────────────────────────────────
-     AW-ID: confirme em Google Ads → Ferramentas → Conversões → Snippet da tag
-     Se o Google Ads mostrar um ID diferente, atualize AW-9557233046 abaixo.
+     Tag ID confirmado: AW-17297473078 (Measurement ID da conta)
+     Conversion tracking ID: AW-17297472874 (usado no send_to)
 ─────────────────────────────────────────────────────────────────────────────── -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-9557233046"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17297473078"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'AW-9557233046', { allow_enhanced_conversions: true });
+  gtag('config', 'AW-17297473078', { allow_enhanced_conversions: true });
 </script>
 
 </head>
@@ -766,7 +766,7 @@
   if(gclid) sessionStorage.setItem('gads_gclid', gclid);
 
   /* ─ Label da conversão (atualizar após criar em Google Ads > Metas > Conversões) ─ */
-  var CONVERSION_LABEL = '';  /* ex: 'AbCdEfGhIjKlMnOp' — preencher após criar a ação */
+  var CONVERSION_LABEL = 'oOYgCLPbmaobEOr6ibhA';  /* Lead – GF Submit (AW-17297472874) */
 
   /* ─ Dispara conversão ─ */
   function lead(secao) {
@@ -791,7 +791,7 @@
     /* Conversão rastreada no painel Google Ads (ativa quando CONVERSION_LABEL preenchido) */
     if(CONVERSION_LABEL) {
       gtag('event', 'conversion', {
-        send_to  : 'AW-9557233046/' + CONVERSION_LABEL,
+        send_to  : 'AW-17297472874/' + CONVERSION_LABEL,
         value    : 1000.0,
         currency : 'BRL',
         event_label: secao
