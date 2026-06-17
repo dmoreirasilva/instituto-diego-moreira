@@ -123,6 +123,8 @@
   /* ── DEPOIMENTOS ── */
   .testimonials{background:var(--surface);padding:88px 0}
   .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:48px}
+  .testimonials-2col{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:768px){.testimonials-2col{grid-template-columns:1fr}}
   .testi-card{background:var(--navy);border-radius:14px;padding:36px;color:var(--white);position:relative}
   .testi-stars{color:var(--gold);font-size:16px;letter-spacing:3px;margin-bottom:16px}
   .testi-quote{font-size:16px;line-height:1.7;color:rgba(255,255,255,.88);margin-bottom:24px;font-style:italic}
@@ -133,6 +135,12 @@
   .testi-role{font-size:13px;color:rgba(255,255,255,.45);margin-top:2px}
   .testi-result{margin-top:20px;background:rgba(201,150,61,.1);border-left:3px solid var(--gold);padding:10px 14px;border-radius:0 6px 6px 0;font-size:13px;color:var(--gold);font-weight:600}
   .testi-source{font-size:12px;color:rgba(255,255,255,.35);margin-bottom:12px;letter-spacing:.5px;text-transform:uppercase;font-weight:600}
+  .testi-card--video{padding:0;overflow:hidden}
+  .testi-card--video .testi-source{padding:20px 24px 12px;margin-bottom:0}
+  .testi-video-wrap{overflow:hidden;background:#000;border-radius:0 0 14px 14px}
+  .testi-video-wrap video{width:100%;max-height:520px;object-fit:contain;display:block}
+  .testi-verify-link{color:var(--gold);text-decoration:none;margin-left:6px;opacity:.75;transition:opacity .2s;font-size:11px}
+  .testi-verify-link:hover{opacity:1;text-decoration:underline}
 
   /* ── TRANSFORMAÇÃO A→B ── */
   .transform{padding:88px 0}
@@ -464,37 +472,22 @@
     <p class="section-eyebrow">Resultados reais</p>
     <h2 class="section-title">O que muda na prática</h2>
     <p class="section-sub">Líderes que decidiram tratar a raiz, não só os sintomas.</p>
-    <div class="testimonials-grid">
+    <div class="testimonials-grid testimonials-2col">
 
-      <div class="testi-card">
-        <div class="testi-source">💬 WhatsApp</div>
-        <p class="testi-quote">Recebi alta dos remédios de ansiedade hoje! Meu remédio acabou ontem e não senti absolutamente nenhum mal estar. Você foi uma peça fundamental para essa conquista sobre essa batalha que travo há anos.</p>
-        <div class="testi-author">
-          <div class="testi-avatar">R</div>
-          <div>
-            <div class="testi-name">Rodrigo</div>
-            <div class="testi-role">Cliente · Brasil</div>
-          </div>
+      <!-- VÍDEO DEPOIMENTO -->
+      <div class="testi-card testi-card--video">
+        <div class="testi-source">🎥 Depoimento em vídeo</div>
+        <div class="testi-video-wrap">
+          <video controls playsinline preload="metadata">
+            <source src="https://institutodiegomoreira.com.br/videos/depoimento.mp4" type="video/mp4">
+          </video>
         </div>
-        <div class="testi-result">✓ Alta dos remédios de ansiedade</div>
       </div>
 
-      <div class="testi-card">
-        <div class="testi-source">💬 WhatsApp</div>
-        <p class="testi-quote">Tô com a cabeça muito leve, focado, e me sentindo muito forte.</p>
-        <div class="testi-author">
-          <div class="testi-avatar">M</div>
-          <div>
-            <div class="testi-name">Mazzali</div>
-            <div class="testi-role">Cliente · Brasil</div>
-          </div>
-        </div>
-        <div class="testi-result">✓ Clareza, foco e força de volta</div>
-      </div>
-
+      <!-- GOOGLE MEU NEGÓCIO – Juliane Araujo -->
       <div class="testi-card">
         <div class="testi-stars">★★★★★</div>
-        <div class="testi-source">🔍 Google</div>
+        <div class="testi-source">🔍 Google Meu Negócio <a href="https://www.google.com/maps/search/Diego+Moreira+Hipnoterapeuta+Juiz+de+Fora" target="_blank" rel="noopener" class="testi-verify-link">verificar ↗</a></div>
         <p class="testi-quote">Fiz minha segunda sessão e já consigo sentir a ressignificação de traumas e crenças limitantes que me acompanhavam desde a infância. Diego é extremamente comprometido, paciente e cuidadoso durante todo o processo.</p>
         <div class="testi-author">
           <div class="testi-avatar">J</div>
