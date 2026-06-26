@@ -63,10 +63,15 @@
   .hero{background:var(--navy);color:var(--white);padding:96px 0 80px;position:relative;overflow:hidden}
   .hero::before{content:"";position:absolute;top:-100px;right:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(201,150,61,.15),transparent 65%);pointer-events:none}
   .hero::after{content:"";position:absolute;bottom:-60px;left:-80px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(201,150,61,.08),transparent 65%);pointer-events:none}
+  .hero-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:56px;align-items:center;position:relative;z-index:1}
+  .hero-photo-wrap{flex-shrink:0}
+  .hero-photo-img{border-radius:20px;overflow:hidden;border:3px solid rgba(201,150,61,.35);box-shadow:0 24px 64px rgba(0,0,0,.4)}
+  .hero-photo-img img{width:100%;display:block;object-fit:cover;object-position:center top}
+  @media(max-width:768px){.hero-grid{display:block}.hero-photo-wrap{display:none}}
   .hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
-  .hero-title{font-family:"Playfair Display",serif;font-size:clamp(38px,5.5vw,68px);line-height:1.0;letter-spacing:-.02em;margin-bottom:24px;max-width:780px}
+  .hero-title{font-family:"Playfair Display",serif;font-size:clamp(38px,4.5vw,62px);line-height:1.0;letter-spacing:-.02em;margin-bottom:24px}
   .hero-title em{font-style:italic;color:var(--gold)}
-  .hero-sub{font-size:clamp(17px,2vw,20px);color:rgba(255,255,255,.78);max-width:600px;line-height:1.65;margin-bottom:36px}
+  .hero-sub{font-size:clamp(17px,1.8vw,19px);color:rgba(255,255,255,.78);max-width:560px;line-height:1.65;margin-bottom:36px}
   .hero-sub strong{color:var(--white)}
   .hero-badges{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px}
   .badge{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:rgba(255,255,255,.72);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:7px 15px;border-radius:999px}
@@ -77,6 +82,8 @@
   .hero-proof-item{text-align:center}
   .hero-proof-num{font-family:"Playfair Display",serif;font-size:36px;color:var(--gold);line-height:1}
   .hero-proof-label{font-size:13px;color:rgba(255,255,255,.5);margin-top:5px;max-width:120px}
+  @keyframes btn-pulse{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}70%{box-shadow:0 0 0 14px rgba(37,211,102,0)}}
+  .btn-wpp.btn-lg{animation:btn-pulse 2.4s infinite}
 
   /* ── PROOF STRIP ── */
   .proof-strip{background:var(--white);border-bottom:1px solid var(--line);padding:28px 0}
@@ -123,8 +130,6 @@
   /* ── DEPOIMENTOS ── */
   .testimonials{background:var(--surface);padding:88px 0}
   .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:48px}
-  .testimonials-2col{grid-template-columns:repeat(2,1fr)}
-  @media(max-width:768px){.testimonials-2col{grid-template-columns:1fr}}
   .testi-card{background:var(--navy);border-radius:14px;padding:36px;color:var(--white);position:relative}
   .testi-stars{color:var(--gold);font-size:16px;letter-spacing:3px;margin-bottom:16px}
   .testi-quote{font-size:16px;line-height:1.7;color:rgba(255,255,255,.88);margin-bottom:24px;font-style:italic}
@@ -135,11 +140,13 @@
   .testi-role{font-size:13px;color:rgba(255,255,255,.45);margin-top:2px}
   .testi-result{margin-top:20px;background:rgba(201,150,61,.1);border-left:3px solid var(--gold);padding:10px 14px;border-radius:0 6px 6px 0;font-size:13px;color:var(--gold);font-weight:600}
   .testi-source{font-size:12px;color:rgba(255,255,255,.35);margin-bottom:12px;letter-spacing:.5px;text-transform:uppercase;font-weight:600}
+  .testimonials-2col{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:768px){.testimonials-2col{grid-template-columns:1fr}}
   .testi-card--video{padding:0;overflow:hidden}
   .testi-card--video .testi-source{padding:20px 24px 12px;margin-bottom:0}
   .testi-video-wrap{overflow:hidden;background:#000;border-radius:0 0 14px 14px}
   .testi-video-wrap video{width:100%;max-height:520px;object-fit:contain;display:block}
-  .testi-verify-link{color:var(--gold);text-decoration:none;margin-left:6px;opacity:.75;transition:opacity .2s;font-size:11px}
+  .testi-verify-link{color:#C9963D;text-decoration:none;margin-left:6px;opacity:.75;transition:opacity .2s;font-size:11px}
   .testi-verify-link:hover{opacity:1;text-decoration:underline}
 
   /* ── TRANSFORMAÇÃO A→B ── */
@@ -245,8 +252,10 @@
   .reveal.in{opacity:1;transform:none}
 
   /* ── STICKY WHATSAPP ── */
-  .wpp-sticky{position:fixed;bottom:28px;right:28px;z-index:100;background:var(--green);color:var(--white);width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 8px 28px rgba(37,211,102,.45);transition:transform .25s}
-  .wpp-sticky:hover{transform:scale(1.1)}
+  .wpp-sticky{position:fixed;bottom:28px;right:28px;z-index:100;background:var(--green);color:var(--white);height:60px;border-radius:30px;display:flex;align-items:center;justify-content:center;gap:10px;padding:0 22px;font-weight:700;font-size:15px;box-shadow:0 8px 28px rgba(37,211,102,.45);transition:transform .25s,box-shadow .25s;white-space:nowrap;text-decoration:none}
+  .wpp-sticky:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(37,211,102,.55)}
+  .wpp-sticky svg{flex-shrink:0}
+  @media(max-width:768px){.wpp-sticky{width:60px;height:60px;padding:0;border-radius:50%;font-size:0;gap:0}.wpp-label{display:none}}
 
   /* ── RESPONSIVO ── */
   @media(max-width:768px){
@@ -268,8 +277,8 @@
 </style>
 
 <!-- ── Google Ads — Global Site Tag ──────────────────────────────────────────
-     Tag ID confirmado: AW-17297473078 (Measurement ID da conta)
-     Conversion tracking ID: AW-17297472874 (usado no send_to)
+     Google Tag ID: AW-17297473078
+     Conversion Tag ID: AW-17297472874
 ─────────────────────────────────────────────────────────────────────────────── -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17297473078"></script>
 <script>
@@ -277,6 +286,7 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'AW-17297473078', { allow_enhanced_conversions: true });
+  gtag('config', 'AW-17297472874', { allow_enhanced_conversions: true });
 </script>
 
 </head>
@@ -302,28 +312,37 @@
 <!-- HERO -->
 <section class="hero">
   <div class="container">
-    <p class="hero-eyebrow">Hipnoterapia Clínica · Método RESET da Ansiedade</p>
-    <h1 class="hero-title">
-      A ansiedade tem raiz.<br>O Método RESET trata <em>na raiz.</em>
-    </h1>
-    <p class="hero-sub">
-      Para empresários e líderes que já tentaram terapia, coaching e meditação e continuam carregando a ansiedade que sabota sua liderança e sua vida pessoal.
-      <strong>Resultado garantido.</strong>
-    </p>
-    <div class="hero-badges">
-      <span class="badge">Hipnoterapia clínica individualizada</span>
-      <span class="badge">Online para todo o Brasil</span>
-      <span class="badge">100% de garantia de resultado</span>
-      <span class="badge">Ansiedade · Pânico · Medos · Burnout · Insônia</span>
-      <span class="badge">⭐ 5 estrelas no Google</span>
-    </div>
-    <div class="hero-cta-group">
-      <a href="https://wa.me/5532984254542?text=Olá%20Diego!%20Quero%20conhecer%20o%20Método%20RESET%20da%20Ansiedade%20e%20verificar%20se%20tenho%20perfil%20para%20entrar" class="btn btn-wpp btn-lg" target="_blank">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Falar com Diego no WhatsApp →
-        <span class="btn-sub">Resposta em minutos · Vagas limitadas</span>
-      </a>
-      <span class="hero-disclaimer">Clique, mande uma mensagem e Diego responde pessoalmente.</span>
+    <div class="hero-grid">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Hipnoterapia Clínica · Método RESET da Ansiedade</p>
+        <h1 class="hero-title">
+          A ansiedade tem raiz.<br>O Método RESET trata <em>na raiz.</em>
+        </h1>
+        <p class="hero-sub">
+          Para empresários e líderes que já tentaram terapia, coaching e meditação e continuam carregando a ansiedade que sabota sua liderança e sua vida pessoal.
+          <strong>Resultado garantido.</strong>
+        </p>
+        <div class="hero-badges">
+          <span class="badge">Hipnoterapia clínica individualizada</span>
+          <span class="badge">Online para todo o Brasil</span>
+          <span class="badge">100% de garantia de resultado</span>
+          <span class="badge">Ansiedade · Pânico · Medos · Burnout · Insônia</span>
+          <span class="badge">⭐ 5 estrelas no Google</span>
+        </div>
+        <div class="hero-cta-group">
+          <a href="https://wa.me/5532984254542?text=Olá%20Diego!%20Quero%20conhecer%20o%20Método%20RESET%20da%20Ansiedade%20e%20verificar%20se%20tenho%20perfil%20para%20entrar" class="btn btn-wpp btn-lg" target="_blank">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Verificar minha vaga agora
+            <span class="btn-sub">Resposta em minutos · Vagas limitadas</span>
+          </a>
+          <span class="hero-disclaimer">Diego avalia seu perfil antes de aceitar. Vagas são limitadas.</span>
+        </div>
+      </div>
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-img">
+          <img src="img/diego-hero.jpg" alt="Diego Moreira, Hipnoterapeuta Clínico" width="460" height="560">
+        </div>
+      </div>
     </div>
     <div class="hero-proof">
       <div class="hero-proof-item">
@@ -396,6 +415,16 @@
     </div>
   </div>
 </section>
+
+<!-- CTA DORES -->
+<div style="background:var(--white);border-top:1px solid rgba(201,150,61,.25);border-bottom:1px solid rgba(201,150,61,.25);padding:44px 24px;text-align:center">
+  <p style="font-size:19px;font-weight:700;color:var(--navy);margin-bottom:6px">Se você se identificou com algum desses padrões,</p>
+  <p style="font-size:16px;color:var(--muted);margin-bottom:28px">a conversa inicial com Diego é gratuita e sem compromisso.</p>
+  <a href="https://wa.me/5532984254542?text=Olá%20Diego!%20Me%20identifiquei%20com%20os%20padrões%20de%20ansiedade%20e%20quero%20entender%20o%20Método%20RESET" class="btn btn-wpp btn-lg" target="_blank">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Quero entender meu caso com Diego
+  </a>
+</div>
 
 <!-- MANIFESTO -->
 <section class="manifesto-strip reveal">
@@ -500,6 +529,36 @@
       </div>
 
     </div>
+
+    <div class="testimonials-grid" style="margin-top:24px">
+
+      <div class="testi-card">
+        <div class="testi-source">💬 WhatsApp</div>
+        <p class="testi-quote">Recebi alta dos remédios de ansiedade hoje! Meu remédio acabou ontem e não senti absolutamente nenhum mal-estar. Você foi uma peça fundamental para essa conquista sobre essa batalha que travo há anos.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">R</div>
+          <div>
+            <div class="testi-name">Rodrigo</div>
+            <div class="testi-role">Cliente · Brasil</div>
+          </div>
+        </div>
+        <div class="testi-result">✓ Alta dos remédios de ansiedade</div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-source">💬 WhatsApp</div>
+        <p class="testi-quote">Tô com a cabeça muito leve, focado, e me sentindo muito forte.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">M</div>
+          <div>
+            <div class="testi-name">Mazzali</div>
+            <div class="testi-role">Cliente · Brasil</div>
+          </div>
+        </div>
+        <div class="testi-result">✓ Clareza, foco e força de volta</div>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -542,6 +601,10 @@
         </ul>
       </div>
     </div>
+    <!-- CTA A→B -->
+    <div style="text-align:center;margin-top:48px">
+      <a href="https://wa.me/5532984254542?text=Ol%C3%A1%20Diego!%20Quero%20essa%20transforma%C3%A7%C3%A3o%20e%20verificar%20se%20tenho%20perfil%20para%20o%20M%C3%A9todo%20RESET" class="btn btn-gold btn-lg" target="_blank">Quero essa transformação →</a>
+    </div>
   </div>
 </section>
 
@@ -574,6 +637,10 @@
           <div class="credential">Fundador do Instituto Diego Moreira</div>
           <div class="credential">Atende exclusivamente empresários, executivos e líderes</div>
         </div>
+        <a href="https://wa.me/5532984254542?text=Ol%C3%A1%20Diego!%20Li%20sua%20hist%C3%B3ria%20e%20quero%20conversar%20sobre%20o%20M%C3%A9todo%20RESET" class="btn btn-wpp" style="margin-top:32px;display:inline-flex;align-items:center;gap:10px" target="_blank">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.523 5.84L0 24l6.336-1.503A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.895 0-3.668-.516-5.187-1.414l-.372-.22-3.764.893.952-3.667-.242-.387A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          Conversar sobre o meu caso com Diego
+        </a>
       </div>
     </div>
   </div>
@@ -620,7 +687,7 @@
         É por isso que faço triagem antes de aceitar qualquer cliente. Se você tiver o perfil certo e se comprometer com o processo, você terá o resultado. Essa é a minha garantia, com responsabilidade real.
       </p>
       <div class="guarantee-cta">
-        <a href="https://wa.me/5532984254542?text=Olá%20Diego!%20Quero%20entender%20como%20funciona%20a%20garantia%20do%20Método%20RESET" class="btn btn-gold" target="_blank">Entender a garantia completa</a>
+        <a href="https://wa.me/5532984254542?text=Ol%C3%A1%20Diego!%20Quero%20essa%20garantia%20e%20verificar%20minha%20vaga" class="btn btn-gold" target="_blank">Quero essa garantia → verificar minha vaga</a>
       </div>
     </div>
   </div>
@@ -722,8 +789,9 @@
 </footer>
 
 <!-- BOTÃO WHATSAPP FIXO -->
-<a href="https://wa.me/5532984254542?text=Olá%20Diego!%20Quero%20conhecer%20o%20Método%20RESET%20da%20Ansiedade" class="wpp-sticky" target="_blank" title="Falar com Diego no WhatsApp">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+<a href="https://wa.me/5532984254542?text=Ol%C3%A1%20Diego!%20Quero%20conhecer%20o%20M%C3%A9todo%20RESET%20da%20Ansiedade" class="wpp-sticky" target="_blank" title="Falar com Diego no WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span class="wpp-label">Falar com Diego</span>
 </a>
 
 <script>
@@ -747,7 +815,7 @@
 <!-- ── Rastreamento de Conversão — Cliques WhatsApp ─────────────────────────
      Cada clique no botão WhatsApp = 1 lead = dispara evento de conversão.
      APÓS criar a conversão em Google Ads → Ferramentas → Conversões → Nova Conversão → Website,
-     substitua LABEL_AQUI pelo label gerado (ex: "AbcDEF123ghiXYZ").
+     Conversão: "Contato (2)" — conta 955-723-3046 — Tag: AW-17297472874 / Label: WVXICNHVgsIcEOr6ibhA
 ─────────────────────────────────────────────────────────────────────────────── -->
 <script>
 (function(){
@@ -758,38 +826,25 @@
   var gclid  = params.get('gclid');
   if(gclid) sessionStorage.setItem('gads_gclid', gclid);
 
-  /* ─ Label da conversão (atualizar após criar em Google Ads > Metas > Conversões) ─ */
-  var CONVERSION_LABEL = 'oOYgCLPbmaobEOr6ibhA';  /* Lead – GF Submit (AW-17297472874) */
-
   /* ─ Dispara conversão ─ */
   function lead(secao) {
     if(typeof gtag === 'undefined') return;
 
-    /* Evento de contato WhatsApp — sinal direto para Smart Bidding */
-    gtag('event', 'contact', {
-      method   : 'whatsapp',
-      currency : 'BRL',
-      value    : 1000.0,
+    /* Conversão principal — Contato (2) — AW-17297472874 */
+    gtag('event', 'conversion', {
+      send_to : 'AW-17297472874/WVXICNHVgsIcEOr6ibhA',
+      value   : 1000.0,   /* valor estimado de um lead qualificado em R$ */
+      currency: 'BRL',
       event_label: secao
     });
 
-    /* Geração de lead — padrão Google, alimenta Smart Bidding imediatamente */
+    /* Evento padrão do Google — alimenta Smart Bidding mesmo sem label */
     gtag('event', 'generate_lead', {
-      currency     : 'BRL',
-      value        : 1000.0,
+      currency: 'BRL',
+      value   : 1000.0,
       event_category: 'Lead',
-      event_label  : secao
+      event_label   : secao
     });
-
-    /* Conversão rastreada no painel Google Ads (ativa quando CONVERSION_LABEL preenchido) */
-    if(CONVERSION_LABEL) {
-      gtag('event', 'conversion', {
-        send_to  : 'AW-17297472874/' + CONVERSION_LABEL,
-        value    : 1000.0,
-        currency : 'BRL',
-        event_label: secao
-      });
-    }
   }
 
   /* ─ Scroll depth como micro-conversão (ajuda o algoritmo a aprender) ─ */
