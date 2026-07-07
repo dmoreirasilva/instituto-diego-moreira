@@ -247,6 +247,38 @@
   .footer-brand{font-family:"Playfair Display",serif;font-size:16px;color:var(--gold)}
   .footer-text{font-size:13px;color:rgba(255,255,255,.3)}
 
+  /* ── CIÊNCIA ── */
+  .science{background:var(--navy2);padding:88px 0;color:var(--white)}
+  .science .section-eyebrow,.science .section-title{text-align:center}
+  .science .section-title{color:var(--white);margin-bottom:16px}
+  .science-intro{text-align:center;font-size:17px;color:rgba(255,255,255,.65);max-width:660px;margin:0 auto 52px;line-height:1.8}
+  .science-intro strong{color:var(--white)}
+  .sci-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:44px}
+  .sci-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-top:3px solid var(--gold);border-radius:12px;padding:30px 26px}
+  .sci-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--gold);background:rgba(201,150,61,.12);border:1px solid rgba(201,150,61,.3);border-radius:4px;padding:4px 10px;margin-bottom:18px}
+  .sci-finding{font-family:"Playfair Display",serif;font-size:1rem;color:var(--white);line-height:1.6;font-style:italic;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.09)}
+  .sci-finding::before{content:"\201C";color:var(--gold);font-size:1.3em}
+  .sci-finding::after{content:"\201D";color:var(--gold);font-size:1.3em}
+  .sci-implication{font-size:14px;color:rgba(255,255,255,.52);line-height:1.75;margin-bottom:14px}
+  .sci-pmid{font-size:11px;color:rgba(255,255,255,.28);border-top:1px solid rgba(255,255,255,.07);padding-top:10px}
+  .sci-pmid a{color:rgba(201,150,61,.55);text-decoration:none;font-weight:600}
+  .sci-pmid a:hover{color:var(--gold)}
+  .sci-bridge{max-width:680px;margin:0 auto 52px;background:rgba(201,150,61,.09);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:24px 28px;font-size:16px;color:rgba(255,255,255,.8);line-height:1.8}
+  .sci-bridge strong{color:var(--gold)}
+  .sci-table-wrap{background:rgba(255,255,255,.03);border-radius:12px;padding:32px;border:1px solid rgba(255,255,255,.07)}
+  .sci-table-title{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+  .sci-table{width:100%;border-collapse:collapse;font-size:14px}
+  .sci-table th{text-align:left;padding:10px 14px;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:rgba(255,255,255,.35);border-bottom:1px solid rgba(255,255,255,.1)}
+  .sci-table td{padding:11px 14px;border-bottom:1px solid rgba(255,255,255,.05);vertical-align:top;line-height:1.6;color:rgba(255,255,255,.65)}
+  .sci-table tr:last-child td{border-bottom:none}
+  .sci-table td:first-child{color:rgba(255,255,255,.9);font-weight:600;width:28%}
+  .sci-table td:last-child{width:15%}
+  .sci-pmid-link{display:inline-block;background:rgba(201,150,61,.14);border:1px solid rgba(201,150,61,.28);color:var(--gold);font-size:11px;font-weight:700;padding:4px 8px;border-radius:4px;text-decoration:none;white-space:nowrap}
+  .sci-pmid-link:hover{background:var(--gold);color:var(--navy)}
+  .sci-disclaimer{font-size:12px;color:rgba(255,255,255,.28);text-align:center;margin-top:24px;line-height:1.7}
+  .sci-disclaimer a{color:rgba(201,150,61,.45);text-decoration:none}
+  @media(max-width:768px){.sci-cards{grid-template-columns:1fr}}
+
   /* ── ANIMAÇÃO ── */
   .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
@@ -433,6 +465,101 @@
       Chega de repetir padrões negativos que sua mente recebeu de herança. Os problemas não estão fora, estão dentro. E tudo que foi programado errado pode ser reprogramado.
     </blockquote>
     <p class="manifesto-author">Diego Moreira · Fundador do Método RESET da Ansiedade</p>
+  </div>
+</section>
+
+<!-- CIÊNCIA -->
+<section class="science reveal">
+  <div class="container">
+    <p class="section-eyebrow">Respaldo científico</p>
+    <h2 class="section-title">Reprogramação mental não é<br>metáfora. É o que a ciência prova.</h2>
+    <p class="science-intro">Estudos publicados nas revistas científicas mais respeitadas do mundo confirmam o que o Método RESET aplica na prática: <strong>o cérebro adulto muda, padrões podem ser reescritos, e a raiz do comportamento está onde a terapia convencional raramente chega.</strong></p>
+
+    <div class="sci-cards">
+
+      <div class="sci-card">
+        <span class="sci-badge">PNAS · Maguire et al. · 2000</span>
+        <p class="sci-finding">Taxistas de Londres que praticavam navegação complexa desenvolveram volume significativamente maior no hipocampo. O cérebro adulto muda estruturalmente com a prática.</p>
+        <p class="sci-implication">Reprogramação mental é fato neurológico, não autoajuda. O Método RESET não pede que você "force a vontade". Ele acessa o nível onde os padrões estão gravados — e o cérebro literalmente muda.</p>
+        <div class="sci-pmid">PMID: <a href="https://pubmed.ncbi.nlm.nih.gov/10716738/" target="_blank" rel="noopener">10716738</a> · PubMed · Proceedings of the National Academy of Sciences</div>
+      </div>
+
+      <div class="sci-card">
+        <span class="sci-badge">Journal of Psychiatric Research · Hofmann &amp; Smits · 2008</span>
+        <p class="sci-finding">Mudar a forma de pensar sobre uma situação produz respostas comportamentais diferentes. A reestruturação cognitiva tem eficácia comprovada no tratamento de ansiedade.</p>
+        <p class="sci-implication">Ansiedade não é só sentimento. É um padrão de interpretação instalado. Quando o padrão muda, a resposta muda junto. É isso que o Método RESET trata — não o sintoma, o padrão.</p>
+        <div class="sci-pmid">PMID: <a href="https://pubmed.ncbi.nlm.nih.gov/18363421/" target="_blank" rel="noopener">18363421</a> · PubMed · Journal of Psychiatric Research</div>
+      </div>
+
+      <div class="sci-card">
+        <span class="sci-badge">Cerebral Cortex · Buhle et al. · 2014</span>
+        <p class="sci-finding">Reinterpretar um evento ativa regiões do córtex pré-frontal — a área responsável por regular emoções. A mudança de padrão cognitivo tem assinatura neurológica mensurável.</p>
+        <p class="sci-implication">Cada sessão do Método RESET que reinterpreta um padrão antigo não é conversa — é intervenção neurológica. O cérebro do cliente literalmente ativa circuitos novos.</p>
+        <div class="sci-pmid">PMID: <a href="https://pubmed.ncbi.nlm.nih.gov/23765157/" target="_blank" rel="noopener">23765157</a> · PubMed · Cerebral Cortex</div>
+      </div>
+
+    </div>
+
+    <div class="sci-bridge">
+      <strong>Por que a terapia convencional "não dura" para muitos líderes:</strong> ela trabalha na camada consciente. Você fala sobre o problema, ganha insight — mas o padrão subconsciente continua rodando. O Método RESET vai onde o padrão realmente está. E a ciência mostra que esse nível muda quando acessado da forma certa.
+    </div>
+
+    <div class="sci-table-wrap">
+      <p class="sci-table-title">Base científica completa — estudos verificáveis no PubMed</p>
+      <table class="sci-table">
+        <thead>
+          <tr><th>Autores / Ano</th><th>Achado — relevância para o Método RESET</th><th>PubMed</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Maguire et al., 2000</td>
+            <td>Prática sistemática altera estrutura física do cérebro adulto — neuroplasticidade comprovada por imagem.</td>
+            <td><a class="sci-pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/10716738/" target="_blank" rel="noopener">PMID 10716738</a></td>
+          </tr>
+          <tr>
+            <td>Draganski et al., 2004</td>
+            <td>Aprender uma nova habilidade aumenta a massa cinzenta em semanas — o cérebro muda mais rápido do que se pensava.</td>
+            <td><a class="sci-pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/14737157/" target="_blank" rel="noopener">PMID 14737157</a></td>
+          </tr>
+          <tr>
+            <td>Hofmann &amp; Smits, 2008</td>
+            <td>Reestruturação cognitiva altera respostas comportamentais — base do tratamento de ansiedade na raiz.</td>
+            <td><a class="sci-pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/18363421/" target="_blank" rel="noopener">PMID 18363421</a></td>
+          </tr>
+          <tr>
+            <td>Carpenter et al., 2018</td>
+            <td>Intervenções cognitivo-comportamentais têm eficácia comprovada em múltiplas condições — ansiedade, pânico e fobias incluídas.</td>
+            <td><a class="sci-pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/29451967/" target="_blank" rel="noopener">PMID 29451967</a></td>
+          </tr>
+          <tr>
+            <td>Buhle et al., 2014</td>
+            <td>Reinterpretar eventos ativa córtex pré-frontal — mudança cognitiva tem assinatura neurológica real, mensurável por ressonância magnética.</td>
+            <td><a class="sci-pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/23765157/" target="_blank" rel="noopener">PMID 23765157</a></td>
+          </tr>
+          <tr>
+            <td>Bandura, 1977</td>
+            <td>A crença na própria capacidade (autoeficácia) prediz iniciação e persistência em comportamentos melhor do que qualquer outra variável. Crenças limitantes têm efeito real e mensurável.</td>
+            <td><a class="sci-pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/847061/" target="_blank" rel="noopener">PMID 847061</a></td>
+          </tr>
+          <tr>
+            <td>Richardson et al., 2012</td>
+            <td>Fatores psicológicos — crenças, autoeficácia e mentalidade — predizem desempenho tão fortemente quanto inteligência cognitiva. Mudar o padrão muda o resultado.</td>
+            <td><a class="sci-pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/22352812/" target="_blank" rel="noopener">PMID 22352812</a></td>
+          </tr>
+          <tr>
+            <td>Roberts et al., 2006</td>
+            <td>Revisão de 92 estudos longitudinais: traços e padrões de personalidade mudam ao longo da vida. O que foi instalado pode ser alterado com a intervenção certa.</td>
+            <td><a class="sci-pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/16435954/" target="_blank" rel="noopener">PMID 16435954</a></td>
+          </tr>
+          <tr>
+            <td>Bleidorn et al., 2018</td>
+            <td>Eventos de vida e intervenções significativas alteram traços de personalidade de forma mensurável e persistente.</td>
+            <td><a class="sci-pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/27716921/" target="_blank" rel="noopener">PMID 27716921</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="sci-disclaimer">Todos os estudos verificáveis em <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">pubmed.ncbi.nlm.nih.gov</a> — busque pelo PMID. O Método RESET da Ansiedade não substitui acompanhamento médico ou psiquiátrico quando indicado.</p>
+    </div>
   </div>
 </section>
 
